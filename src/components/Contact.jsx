@@ -1,19 +1,51 @@
 import { useState } from "react";
 import { profile } from "../data/portfolioData";
 
+// Web3Forms public access key — safe to ship in client code; it only allows
+// submissions that are forwarded to the inbox registered with the key.
+const WEB3FORMS_ACCESS_KEY = "9fdff899-c5d5-4cd0-918e-b67e38645033";
+
+const initialForm = { name: "", email: "", message: "" };
+
 export default function Contact() {
-  const [form, setForm] = useState({ name: "", email: "", message: "" });
+  const [form, setForm] = useState(initialForm);
+  const [status, setStatus] = useState("idle"); // idle | sending | success | error
+  const [error, setError] = useState("");
 
   function handleChange(e) {
     const { name, value } = e.target;
     setForm(prev => ({ ...prev, [name]: value }));
   }
 
-  function handleSubmit(e) {
+  async function handleSubmit(e) {
     e.preventDefault();
-    const subject = encodeURIComponent(`Portfolio inquiry from ${form.name || "a visitor"}`);
-    const body = encodeURIComponent(`${form.message}\n\n— ${form.name} (${form.email})`);
-    window.location.href = `mailto:${profile.email}?subject=${subject}&body=${body}`;
+    setStatus("sending");
+    setError("");
+
+    try {
+      const response = await fetch("https://api.web3forms.com/submit", {
+        method: "POST",
+        headers: { "Content-Type": "application/json", Accept: "application/json" },
+        body: JSON.stringify({
+          access_key: WEB3FORMS_ACCESS_KEY,
+          subject: `Portfolio inquiry from ${form.name}`,
+          from_name: "Portfolio Contact Form",
+          ...form,
+        }),
+      });
+      const data = await response.json();
+
+      if (data.success) {
+        setStatus("success");
+        setForm(initialForm);
+      } else {
+        setStatus("error");
+        setError(data.message || "Something went wrong.");
+      }
+    } catch {
+      setStatus("error");
+      setError("Network error — please check your connection.");
+    }
   }
 
   return (
@@ -38,7 +70,22 @@ export default function Contact() {
           Message
           <textarea name="message" rows="5" value={form.message} onChange={handleChange} required />
         </label>
-        <button type="submit" className="btn btn--primary">Send Message</button>
+        <button type="submit" className="btn btn--primary" disabled={status === "sending"}>
+          {status === "sending" ? "Sending…" : "Send Message"}
+        </button>
+
+        <p className="contact-form__status" role="status" aria-live="polite">
+          {status === "success" && (
+            <span className="contact-form__status--success">
+              Thanks! Your message has been sent — I'll get back to you soon.
+            </span>
+          )}
+          {status === "error" && (
+            <span className="contact-form__status--error">
+              {error} You can also email me directly below.
+            </span>
+          )}
+        </p>
       </form>
 
       <p className="contact__direct">
