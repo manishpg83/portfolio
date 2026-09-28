@@ -37,6 +37,9 @@ export default function Navbar({ theme, onToggleTheme }) {
         </nav>
 
         <div className="navbar__actions">
+          <a className="navbar__resume" href={profile.resumeUrl} download>
+            Resume
+          </a>
           <button
             type="button"
             className="theme-toggle"

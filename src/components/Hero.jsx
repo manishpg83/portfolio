@@ -1,9 +1,11 @@
 import { profile } from "../data/portfolioData";
+import profilePhoto from "../assets/profile.jpg";
 
 export default function Hero() {
   return (
     <section id="top" className="hero">
       <div className="hero__content">
+        <img className="hero__photo" src={profilePhoto} alt={profile.name} />
         <p className="hero__eyebrow">Hi, I'm</p>
         <h1 className="hero__name">{profile.name}</h1>
         <h2 className="hero__title">{profile.title}</h2>
@@ -15,6 +17,9 @@ export default function Hero() {
           </a>
           <a className="btn btn--ghost" href="#contact">
             Get In Touch
+          </a>
+          <a className="btn btn--ghost" href={profile.resumeUrl} download>
+            Download Resume
           </a>
         </div>
 

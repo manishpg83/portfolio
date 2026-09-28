@@ -2,11 +2,11 @@ export const profile = {
   name: "Manish Bhuva",
   title: "Senior Technical Architect",
   tagline:
-    "18+ years architecting and building web platforms in PHP/Laravel, Python/Django, and Magento 2 — deployed and scaled on AWS.",
+    "18+ years building web platforms across PHP, Python, and modern JavaScript — from Laravel and Magento 2 to React, Vue, and Node.js — deployed and scaled on AWS.",
   location: "India",
   email: "manish.bhuvait@gmail.com",
   phone: "+91 94288 89935",
-  resumeUrl: "#",
+  resumeUrl: `${import.meta.env.BASE_URL}Manish_Bhuva_Resume.pdf`,
   social: {
     github: "https://github.com/manishpg83",
     linkedin: "https://www.linkedin.com/in/magentoexpert1/",
@@ -24,6 +24,7 @@ export const about = {
   paragraphs: [
     "I'm a Senior Technical Architect with 18+ years of experience designing, building, and scaling web platforms — from custom PHP/Laravel and Python/Django applications to large Magento 2 e-commerce implementations.",
     "I've delivered 100+ web projects and 40+ e-commerce builds across government, healthcare, e-commerce, and SaaS domains, taking projects from architecture and solution design through AWS deployment and ongoing infrastructure management.",
+    "My stack spans PHP (Laravel, Yii, CodeIgniter), Python, and JavaScript across the full modern front-end landscape — React, Next.js, Vue.js, Angular, and Node.js — plus secure RESTful JSON APIs and solid object-oriented design.",
     "Beyond hands-on development, I lead teams and own technical direction — choosing the right stack for the problem, whether that's Laravel and Vue.js, Django REST Framework, Magento 2, or a WooCommerce/Shopify storefront.",
   ],
 };
@@ -31,19 +32,23 @@ export const about = {
 export const skills = [
   {
     category: "Backend",
-    items: ["PHP", "Laravel", "Python", "Django", "Django REST Framework", "Flask"],
-  },
-  {
-    category: "E-commerce Platforms",
-    items: ["Magento 2", "Magento 1.x Migration", "WooCommerce", "Shopify"],
+    items: ["PHP", "Python", "Node.js", "Laravel", "Yii", "CodeIgniter", "Django", "Flask", "OOP", "Secure REST APIs (JSON)"],
   },
   {
     category: "Frontend",
-    items: ["Vue.js", "JavaScript", "WordPress", "HTML5 & CSS3"],
+    items: ["JavaScript", "jQuery", "React.js", "Next.js", "Vue.js", "Angular.js", "HTML5 & CSS3"],
+  },
+  {
+    category: "Databases",
+    items: ["MySQL", "MongoDB", "PostgreSQL"],
+  },
+  {
+    category: "E-commerce Platforms",
+    items: ["Magento 2", "Magento 1.x Migration", "WordPress", "WooCommerce", "OpenCart", "Shopify"],
   },
   {
     category: "Cloud & Infrastructure",
-    items: ["AWS", "Cloud Deployment", "Infrastructure Management", "REST APIs"],
+    items: ["AWS", "Cloud Deployment", "Infrastructure Management"],
   },
   {
     category: "Leadership",
