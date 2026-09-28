@@ -13,6 +13,45 @@ export const profile = {
   },
 };
 
+// Rotated by the typing animation in the hero.
+export const roles = [
+  "Senior Technical Architect",
+  "Laravel & Django Expert",
+  "Magento 2 Specialist",
+  "AWS Cloud Engineer",
+  "AI Solutions Builder",
+  "Technical Lead",
+];
+
+// Eyebrow label, heading and subtitle shown at the top of each section.
+export const sectionIntros = {
+  about: {
+    eyebrow: "About Me",
+    title: "Architecting platforms that scale",
+    subtitle: "Two decades of turning business problems into reliable, maintainable software.",
+  },
+  skills: {
+    eyebrow: "Skills",
+    title: "Technologies I work with",
+    subtitle: "The stack I choose from to fit each problem — not the other way round.",
+  },
+  highlights: {
+    eyebrow: "Highlights",
+    title: "Track record",
+    subtitle: "What 18+ years of delivery looks like in numbers and outcomes.",
+  },
+  projects: {
+    eyebrow: "Projects",
+    title: "Featured work",
+    subtitle: "Live client platforms across Laravel, Django, Magento, WordPress, and Shopify.",
+  },
+  contact: {
+    eyebrow: "Contact",
+    title: "Let's build something together",
+    subtitle: "Have a project in mind or just want to say hi? My inbox is always open.",
+  },
+};
+
 export const stats = [
   { label: "Years of Experience", value: "18+" },
   { label: "Projects Delivered", value: "100+" },

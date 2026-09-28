@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { profile } from "../data/portfolioData";
+import SectionHeader from "./SectionHeader";
 
 // Web3Forms public access key — safe to ship in client code; it only allows
 // submissions that are forwarded to the inbox registered with the key.
@@ -50,12 +51,9 @@ export default function Contact() {
 
   return (
     <section id="contact" className="section">
-      <h2 className="section__title">Get In Touch</h2>
-      <p className="contact__intro">
-        Have a project in mind or just want to say hi? My inbox is always open.
-      </p>
+      <SectionHeader id="contact" />
 
-      <form className="contact-form" onSubmit={handleSubmit}>
+      <form className="contact-form reveal" onSubmit={handleSubmit}>
         <div className="contact-form__row">
           <label>
             Name

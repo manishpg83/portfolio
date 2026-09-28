@@ -1,13 +1,14 @@
 import { highlights } from "../data/portfolioData";
+import SectionHeader from "./SectionHeader";
 
 export default function Highlights() {
   return (
     <section id="highlights" className="section">
-      <h2 className="section__title">Highlights</h2>
+      <SectionHeader id="highlights" />
 
       <div className="highlights__grid">
         {highlights.map(item => (
-          <div key={item.title} className="highlight-card">
+          <div key={item.title} className="highlight-card reveal">
             <h3>{item.title}</h3>
             <p>{item.detail}</p>
           </div>

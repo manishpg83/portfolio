@@ -1,18 +1,19 @@
 import { about, stats } from "../data/portfolioData";
+import SectionHeader from "./SectionHeader";
 
 export default function About() {
   return (
     <section id="about" className="section">
-      <h2 className="section__title">About Me</h2>
+      <SectionHeader id="about" />
 
       <div className="about__grid">
-        <div className="about__text">
+        <div className="about__text reveal">
           {about.paragraphs.map((p, i) => (
             <p key={i}>{p}</p>
           ))}
         </div>
 
-        <div className="about__stats">
+        <div className="about__stats reveal">
           {stats.map(stat => (
             <div key={stat.label} className="stat-card">
               <span className="stat-card__value">{stat.value}</span>
