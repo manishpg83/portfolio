@@ -16,9 +16,9 @@ export const profile = {
 // Rotated by the typing animation in the hero.
 export const roles = [
   "Senior Technical Architect",
-  "Laravel & Django Expert",
+  "Laravel & PHP Expert",
   "Magento 2 Specialist",
-  "AWS Cloud Engineer",
+  "Shopify & WooCommerce Developer",
   "AI Solutions Builder",
   "Technical Lead",
 ];
@@ -43,7 +43,7 @@ export const sectionIntros = {
   projects: {
     eyebrow: "Projects",
     title: "Featured work",
-    subtitle: "Live client platforms across Laravel, Django, Magento, WordPress, and Shopify.",
+    subtitle: "Live client platforms across Laravel, CodeIgniter, Magento, WordPress, and Shopify.",
   },
   contact: {
     eyebrow: "Contact",
@@ -79,7 +79,7 @@ export const skills = [
   },
   {
     category: "Databases",
-    items: ["MySQL", "MongoDB", "PostgreSQL", "SQL Server"],
+    items: ["MySQL", "MongoDB", "PostgreSQL"],
   },
   {
     category: "E-commerce Platforms",
